@@ -70,6 +70,11 @@ type QueryOptions struct {
 	// Negative is the negative query options.
 	// They can be used to exclude certain results from the query.
 	Negative NegativeQueryOptions
+
+	// Invert reverses the search: when true, returns the N documents with the
+	// lowest cosine similarity instead of the highest, ordered ascending.
+	// TODO: implement invert logic in getMostSimilarDocs
+	Invert bool
 }
 
 type NegativeQueryOptions struct {
